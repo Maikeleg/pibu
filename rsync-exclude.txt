@@ -1,0 +1,9 @@
+/proc/*
+/sys/*
+/dev/*
+/boot/*
+/boot.bak/*
+/tmp/*
+/run/*
+/mnt/*
+/media/*
