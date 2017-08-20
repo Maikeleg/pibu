@@ -63,7 +63,7 @@ To edit cron, type:
 Then add the folowing lines in the end, for example to run every Sunday at 9:00 am;  
  
 `# m h dom mon dow command`  
-`&nbsp;&nbsp;0 9  *   *  Sun /home/pi/backupscript/makebackup.sh`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`0 9  *   *  Sun /home/pi/backupscript/makebackup.sh`  
 
 ## Licence and contact
 All files are publicly available under GNU license as open source trough github.
