@@ -31,8 +31,8 @@ This way every week there will be an archived backup until a maximum of backups 
 |_checkspace.sh    | Subscript to check if there is enough space (var *MINSIZE*) available on backup locations first and second. If you want to, you can add a thirth backlocation too.
 |_controlproc.sh   | Subscripts that stops processes and pauses downloads and starts processes and resume downloads, defined in array variable *PROCESS* in this subscript. More info: see last lines of * makebackup.conf*
 |_checkanddelwk5.sh| Subscript that checks if all backupfiles are in place. If so, then it keeps the max number of backupfiles (var *MAXFILES*) by deleting the first and oldest backupfile. This way you keep having *MAXFILES* nr of backups on the first backuplocation.
-|rsync-exclude.txt | In this file all directory-paths are written that rsync has to exclude to leave out of the 
-|                  | backupfiles. Certain directories are written to be empty but existend, e.g.  `/mnt`
+|rsync-exclude.txt | In this file all directory-paths are written that rsync has to exclude to leave out of the backupfiles. Certain directories are written to be empty but existend, e.g.  `/mnt`
+|startafterr.sh    | After an error occurred, the backupscript halted. When you want to start all processes again you can use this script. Please make sure to delete the backup.pid file yourself!
  
 ## Paths:
 
@@ -53,11 +53,11 @@ To aquire the file type the following (from your home directory, cd ~);
 ## Plan to run the script
 The main script  *makebackup.sh*  can be planned weekly with a cronjob;  
 To edit cron, type:  
-  `crontab -e`  
+.`crontab -e`  
 Then add the folowing lines in the end, for example to run every Sunday at 9:00 am, 
 
 `# m h dom mon dow command`  
-`  0 9  *   *  Sun /home/pi/backupscript/makebackup.sh`  
+..`0 9  *   *  Sun /home/pi/backupscript/makebackup.sh`  
 
 ## Licence and contact
 All files are publicly available under GNU license as open source trough github.
