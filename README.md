@@ -47,17 +47,23 @@ Path                      | Discription
 
 ## Install files on your pi
 To aquire the file type the following (from your home directory, cd ~);  
+`cd ~`  
 `git clone https://github.com/Maikeleg/pibu`  
-`cd pibu`
+`mv -T ~/pibu ~/backupscript`  
+`cd ~/backupscript`  
+`md log`  
+`chown -R root ~/backupscript`  
+`chmod -R 755 ~/backupscript`  
+Ofcourse you can also rename the *pibu* and/or *log* directory to something else, just change the makebackup.conf accordingly.
 
 ## Plan to run the script
 The main script  *makebackup.sh*  can be planned weekly with a cronjob;  
 To edit cron, type:  
-.`crontab -e`  
-Then add the folowing lines in the end, for example to run every Sunday at 9:00 am, 
-
+`crontab -e`  
+Then add the folowing lines in the end, for example to run every Sunday at 9:00 am;  
+ 
 `# m h dom mon dow command`  
-..`0 9  *   *  Sun /home/pi/backupscript/makebackup.sh`  
+&nbsp;&nbsp;`0 9  *   *  Sun /home/pi/backupscript/makebackup.sh`  
 
 ## Licence and contact
 All files are publicly available under GNU license as open source trough github.
